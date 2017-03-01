@@ -1,0 +1,12 @@
+.row
+  .col-md-4
+    h2 Feedbacks
+  .col-md-3.text-right
+    =link_to 'Create a New Survey Feedback', new_feedback_path, class: 'btn btn-primary btn-sm'
+.row
+  .col-md-7
+    table.table.table-bordered
+      - @feedbacks.each do |feedback|
+        tr
+          td =link_to feedback do
+            = feedback.name.blank? ? "Feedback ##{feedback.id}" : feedback.name

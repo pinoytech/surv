@@ -1,0 +1,12 @@
+.row
+  .col-md-4
+    h2 Create a Survey Feedback
+  .col-md-3.text-right
+    = render 'return_button'
+.row
+  .col-md-7
+    =form_for @feedback do |f|
+      .form-group
+        =f.label :name, 'Describe Survey Feedback'
+        =f.text_area :name, class: 'form-control', placeholder: 'Survey Feedback description'
+      =f.submit 'Save Survey', class: 'btn btn-primary btn-sm'

@@ -1,0 +1,16 @@
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed aria-expanded="false" data-target="#navbar-collapse" data-toggle="collapse" type="button" 
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      =link_to 'Feedback Home', root_path, class: 'navbar-brand'
+    /! Collect the nav links, forms, and other content for toggling
+    #navbar-collapse.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          =link_to '#' do
+            | Responses
+            span.sr-only (current)

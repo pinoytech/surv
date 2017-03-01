@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Safety Management Systems 360
+    meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700'
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = yield(:jsapi)
+    = csrf_meta_tags
+  body
+    = render 'navigation'
+    .container-fluid.margin-bottom
+      = yield
+    = render 'footer'
