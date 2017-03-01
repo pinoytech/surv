@@ -2,7 +2,7 @@ class FeedbacksController < ApplicationController
   before_action :set_feedback, only: [:show, :edit, :update, :destroy]
 
   def index
-    @feedbacks = Feedback.all
+    @feedbacks = Feedback.includes(:questions)
   end
 
   def show
@@ -10,6 +10,9 @@ class FeedbacksController < ApplicationController
 
   def new
     @feedback = Feedback.new
+    Feedback::DEFAULT_QUESTIONS.each do |question|
+      @feedback.questions.build(question: question)
+    end
   end
 
   def create
@@ -30,6 +33,6 @@ class FeedbacksController < ApplicationController
     end
 
     def feedback_params
-      params.fetch(:feedback).permit(:name)
+      params.fetch(:feedback).permit(:name, questions_attributes: [:question])
     end
 end

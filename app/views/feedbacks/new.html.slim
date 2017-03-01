@@ -1,6 +1,6 @@
 .row
   .col-md-4
-    h2 Create a Survey Feedback
+    h3 Create a Survey Feedback
   .col-md-3.text-right
     = render 'return_button'
 .row
@@ -9,4 +9,10 @@
       .form-group
         =f.label :name, 'Describe Survey Feedback'
         =f.text_area :name, class: 'form-control', placeholder: 'Survey Feedback description'
+      .form-group
+        =link_to 'Add Addtional Question to Survey Feedback', insert_questions_path, class: 'btn btn-primary btn-sm', remote: true
+      .questions
+        = f.fields_for :questions do |n|
+          .form-group
+            =n.text_field :question, class: 'form-control', readonly: true
       =f.submit 'Save Survey', class: 'btn btn-primary btn-sm'
