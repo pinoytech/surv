@@ -10,7 +10,7 @@
         =f.label :name, 'Describe Survey Feedback'
         =f.text_area :name, class: 'form-control', placeholder: 'Survey Feedback description'
       .form-group
-        =link_to 'Add Addtional Question to Survey Feedback', insert_questions_path, class: 'btn btn-primary btn-sm', remote: true
+        =link_to 'Add Additional Question to Survey Feedback', insert_questions_path, class: 'btn btn-primary btn-sm', remote: true
       .questions
         = f.fields_for :questions do |n|
           .form-group
