@@ -14,3 +14,7 @@ nav.navbar.navbar-default.header
           =link_to '#' do
             | Responses
             span.sr-only (current)
+      ul.nav.navbar-nav.navbar-right
+        li
+          - if admin_user_signed_in?
+            =link_to 'Sign Out', destroy_admin_user_session_path, method: :delete
