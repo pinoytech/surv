@@ -15,4 +15,5 @@
         = f.fields_for :questions do |n|
           .form-group
             =n.text_field :question, class: 'form-control', readonly: true
+            =n.hidden_field :custom, value: false
       =f.submit 'Save Survey', class: 'btn btn-primary btn-sm'

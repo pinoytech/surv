@@ -1,3 +1,10 @@
 .row
   .col-md-7
     h3 =@feedback.name
+.row
+  .col-md-7
+    - form_for :feedback do |f|
+      - @feedback.questions.each do |question|
+        .form-group
+          =f.text_field :answer
+          =f.hidden_field question.id

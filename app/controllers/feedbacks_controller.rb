@@ -33,6 +33,6 @@ class FeedbacksController < ApplicationController
     end
 
     def feedback_params
-      params.fetch(:feedback).permit(:name, questions_attributes: [:question])
+      params.fetch(:feedback).permit(:name, questions_attributes: [:question, :custom])
     end
 end

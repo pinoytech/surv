@@ -1,2 +1,2 @@
 .form-group
-  =text_field_tag "feedback[questions_attributes][#{Time.now.to_i}][question]", '', class: 'form-control custom_question'
+  =text_field_tag "feedback[questions_attributes][#{Time.now.to_i.to_s + rand(0...3262010).to_s}][question]", '', class: 'form-control custom_question'
