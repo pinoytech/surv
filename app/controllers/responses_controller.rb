@@ -1,4 +1,5 @@
 class ResponsesController < ApplicationController
+  before_action :authenticate_admin_user!, only: [:index]
   before_action :set_response, only: [:show, :edit, :update, :destroy]
   before_action :set_feedback, only: [:new, :create, :index]
 
