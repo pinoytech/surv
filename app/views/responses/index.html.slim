@@ -1,9 +1,16 @@
 .row
-  .col-md-8
-    h3 =@feedback.name || ''
+  .col-md-4
+    h3
+      | Feedback Name:
+      | &nbsp;
+      =@feedback.name || ''
 .row
   .col-md-8
     - @responses.each do |response|
+      h4
+        | Respondent:
+        | &nbsp;
+        = response.respondent.try(:name) || ''
       table.table.table-bordered.table-condensed
         - response.answers.each do  |answer|
           tr
