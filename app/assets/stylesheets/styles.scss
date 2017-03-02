@@ -1,3 +1,30 @@
+@import "compass";
+@import "variables";
+
 .margin-top {
   margin-top: 2rem;
+}
+
+.header {
+  background: {
+    color: $header-green;
+  }
+}
+
+a {
+  color: $green-text;
+}
+
+.header
+.navbar-brand,
+.header
+.navbar-brand:hover,
+.navbar-default .navbar-nav > li > a {
+  color: $header-text-white;
+}
+
+.btn-primary,
+.btn-primary:hover {
+  color: $black-text;
+  @include background-image(linear-gradient(white, $header-green));
 }
