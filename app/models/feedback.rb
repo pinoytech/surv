@@ -1,6 +1,7 @@
 class Feedback < ApplicationRecord
 
   has_many :questions, inverse_of: :feedback
+  has_many :responses, inverse_of: :feedback
 
   accepts_nested_attributes_for :questions
 
