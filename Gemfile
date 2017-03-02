@@ -73,7 +73,3 @@ gem 'slim'
 gem 'slim-rails'
 gem 'devise'
 gem 'will_paginate-bootstrap', '1.0.1'
-gem 'compass-rails'
-git 'https://github.com/ably-forks/compass', branch: 'sass-deprecation-warning-fix' do
-  gem 'compass-core'
-end

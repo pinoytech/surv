@@ -1,4 +1,3 @@
-@import "compass";
 @import "variables";
 
 .margin-top {
@@ -24,7 +23,12 @@ a {
 }
 
 .btn-primary,
-.btn-primary:hover {
-  color: $black-text;
-  @include background-image(linear-gradient(white, $header-green));
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  color: $white-text;
+  background: {
+    color: $green;
+  }
 }
