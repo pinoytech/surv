@@ -1,10 +1,10 @@
 class ResponsesController < ApplicationController
-  before_action :authenticate_admin_user!, only: [:index]
+  before_action :authenticate_admin_user!, only: [:index, :show]
   before_action :set_response, only: [:show, :edit, :update, :destroy]
   before_action :set_feedback, only: [:new, :create, :index]
 
   def index
-    @feedback = Feedback.find params[:feedback_id]
+    @feedback = Feedback.friendly.find params[:feedback_id]
     @responses = @feedback.responses
   end
 
@@ -37,7 +37,7 @@ class ResponsesController < ApplicationController
     end
 
     def set_feedback
-      @feedback = Feedback.find(params[:feedback_id])
+      @feedback = Feedback.friendly.find(params[:feedback_id])
     end
 
     def response_params
