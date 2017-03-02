@@ -18,7 +18,7 @@ class ResponsesController < ApplicationController
   end
 
   def create
-    @response = Response.new(response_params)
+    @response = @feedback.responses.new(response_params)
 
     respond_to do |format|
       if @response.save
@@ -31,8 +31,9 @@ class ResponsesController < ApplicationController
 
   private
     def set_response
-      @response = Response.find(params[:id])
+      @response = @feedback.responses.find(params[:id])
     end
+
     def set_feedback
       @feedback = Feedback.find(params[:feedback_id])
     end

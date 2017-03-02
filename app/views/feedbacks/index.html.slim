@@ -1,20 +1,22 @@
 .row
-  .col-md-4
+  .col-md-5
     h3 List of Feedbacks
   .col-md-3.text-right
     =link_to 'Create a New Survey Feedback', new_feedback_path, class: 'btn btn-primary btn-sm'
 .row
-  .col-md-7
+  .col-md-8
     table.table.table-bordered.table-condensed
       tr
-        td Survey Feedback Name
+        td.col-md-3 Survey Feedback Name
         td.col-md-2 No. of Questions
-        td Shareable Link
+        td.col-md-2 No. of Responses
+        td.col-md-5 Shareable Link
       - @feedbacks.each do |feedback|
         tr
           td =link_to new_feedback_response_url(feedback) do
             = feedback.name.blank? ? "Feedback ##{feedback.id}" : feedback.name
           td =feedback.questions.count
+          td =feedback.responses.count
           td
             .input-group
               span.input-group-btn

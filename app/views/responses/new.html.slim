@@ -1,14 +1,14 @@
 .row
-  .col-md-7
+  .col-md-8
     h3 =@feedback.name || ''
 .row
-  .col-md-7
+  .col-md-8
     = form_for [:feedback, @response] do |f|
       = f.hidden_field :feedback_id, value: @feedback.id
       = f.fields_for :answers, @response.answers.each do |n|
         .form-group class="#{has_error(n.object, :answer)}"
           =n.label :answer, n.object.question.question
-          =n.text_field :answer, class: 'form-control'
+          =n.text_area :answer, rows: '2', class: 'form-control'
           =n.hidden_field :question_id, value: n.object.question.id
           - if n.object.question.custom?
             p.help-block This question was added by the administrator
