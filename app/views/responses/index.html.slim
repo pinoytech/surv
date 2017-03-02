@@ -1,0 +1,12 @@
+.row
+  .col-md-8
+    h3 =@feedback.name || ''
+.row
+  .col-md-8
+    - @responses.each do |response|
+      table.table.table-bordered.table-condensed
+        - response.answers.each do  |answer|
+          tr
+            td.col-md-6=answer.question.question 
+            td.col-md-6=answer.answer 
+      

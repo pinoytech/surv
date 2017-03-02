@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'feedbacks#index'
   resources :feedbacks, only: [:index, :show, :new, :create] do
-    resources :responses, only: [:new, :create, :show]
+    resources :responses, only: [:new, :create, :show, :index]
   end
   resources :questions, only: [] do
     collection do

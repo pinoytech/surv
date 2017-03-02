@@ -1,9 +1,10 @@
 class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :edit, :update, :destroy]
-  before_action :set_feedback, only: [:new, :create]
+  before_action :set_feedback, only: [:new, :create, :index]
 
   def index
-    @responses = Response.all
+    @feedback = Feedback.find params[:feedback_id]
+    @responses = @feedback.responses
   end
 
   def show
