@@ -13,6 +13,7 @@ class ResponsesController < ApplicationController
 
   def new
     @response = @feedback.responses.new
+    @response.build_respondent
     @questions = @feedback.questions
     @questions.each do |question|
       @response.answers.build(question_id: question.id)
@@ -21,7 +22,6 @@ class ResponsesController < ApplicationController
 
   def create
     @response = @feedback.responses.new(response_params)
-
     respond_to do |format|
       if @response.save
         format.html { redirect_to new_feedback_response_path(@response.feedback), notice: 'Response was successfully created.' }
@@ -41,6 +41,6 @@ class ResponsesController < ApplicationController
     end
 
     def response_params
-      params.fetch(:response).permit(:feedback_id, answers_attributes: [:answer, :question_id])
+      params.fetch(:response).permit(:feedback_id, answers_attributes: [:answer, :question_id], respondent_attributes:[:name])
     end
 end
