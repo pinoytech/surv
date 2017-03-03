@@ -2,6 +2,7 @@
 .row
   .col-md-8
     = render 'flash'
+    = errors_for(@response)
     = form_for [:feedback, @response] do |f|
       = f.fields_for :respondent do |respondent|
         =respondent.label :name, 'Respondent Name (optional)'
