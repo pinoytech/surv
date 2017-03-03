@@ -1,6 +1,7 @@
 = render 'survey_header'
 .row
   .col-md-8
+    = render 'flash'
     = form_for [:feedback, @response] do |f|
       = f.fields_for :respondent do |respondent|
         =respondent.label :name, 'Respondent Name (optional)'
