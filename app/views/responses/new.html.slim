@@ -11,6 +11,6 @@
           =answer.label :answer, answer.object.question.question
           =answer.text_area :answer, rows: '2', class: 'form-control'
           =answer.hidden_field :question_id, value: answer.object.question.id
-          - if answer.object.question.custom?
+          - if answer.object.question.added_by_administrator?
             p.help-block This question was added by the administrator
       =f.submit "Submit Response", class: 'btn btn-primary'
