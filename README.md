@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Application Login
 
-Things you may want to cover:
+![alt text](https://i.snag.gy/ADL2bS.jpg "Application Login")
 
-* Ruby version
+### Feedbacks Screen
 
-* System dependencies
+![alt text](https://i.snag.gy/1bS83e.jpg "Feedbacks Screen")
 
-* Configuration
+### Feedbacks Responses Screen
 
-* Database creation
+![alt text](https://i.snag.gy/EQy1qe.jpg "Feedbacks Responses Screen")
 
-* Database initialization
+### Feedback Creation Form
 
-* How to run the test suite
+![alt text](https://i.snag.gy/eQVMDz.jpg "Feedback Creation Form")
 
-* Services (job queues, cache servers, search engines, etc.)
+### Respondent Form
 
-* Deployment instructions
-
-* ...
+![alt text](https://i.snag.gy/Nqxv6b.jpg "Respondent Form")
