@@ -3,7 +3,7 @@ class FeedbacksController < ApplicationController
   before_action :set_feedback, only: [:show, :edit, :update, :destroy]
 
   def index
-    @feedbacks = Feedback.includes(:questions)
+    @feedbacks = ArrayPagination.paginate(Feedback.all, {page: params[:page], per: 10})
   end
 
   def show
@@ -30,7 +30,7 @@ class FeedbacksController < ApplicationController
 
   private
     def set_feedback
-      @feedback = Feedback.find(params[:id])
+      @feedback = Feedback.friendly.find(params[:id])
     end
 
     def feedback_params

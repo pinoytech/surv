@@ -6,6 +6,7 @@ class ResponsesController < ApplicationController
   def index
     @feedback = Feedback.friendly.find params[:feedback_id]
     @responses = @feedback.responses
+    @responses = ArrayPagination.paginate(@feedback.responses, {page: params[:page], per: 5})
   end
 
   def show

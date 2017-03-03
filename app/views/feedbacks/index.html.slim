@@ -22,3 +22,4 @@
               span.input-group-btn
                 button.btn.btn-default.shareable_button type="button" class="btn btn-warning btn-sm"  Copy
               input.form-control.input-sm value="#{new_feedback_response_url(feedback)}" type="text"
+    = kaminari_paginate @feedbacks
