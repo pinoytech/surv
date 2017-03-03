@@ -1,9 +1,4 @@
-.row
-  .col-md-4
-    h3
-      | Feedback Name:
-      | &nbsp;
-      =@feedback.name || ''
+= render 'survey_header'
 .row
   .col-md-8
     - @responses.each do |response|
@@ -12,9 +7,6 @@
         | &nbsp;
         = response.respondent.try(:name) || ''
       table.table.table-bordered.table-condensed
-        - response.answers.each do  |answer|
-          tr
-            td.col-md-6=answer.question.question 
-            td.col-md-6=answer.answer 
+        = render response.answers
     = kaminari_paginate @responses
       

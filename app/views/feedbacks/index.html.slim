@@ -11,15 +11,5 @@
         td.col-md-2 No. of Questions
         td.col-md-2 No. of Responses
         td.col-md-5 Shareable Link
-      - @feedbacks.each do |feedback|
-        tr
-          td =link_to new_feedback_response_url(feedback) do
-            = feedback.name.blank? ? "Feedback ##{feedback.id}" : feedback.name
-          td =feedback.questions.count
-          td =link_to feedback.responses.count, feedback_responses_path(feedback)
-          td
-            .input-group
-              span.input-group-btn
-                button.btn.btn-default.shareable_button type="button" class="btn btn-warning btn-sm"  Copy
-              input.form-control.input-sm value="#{new_feedback_response_url(feedback)}" type="text"
+      = render @feedbacks
     = kaminari_paginate @feedbacks

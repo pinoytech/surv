@@ -1,6 +1,4 @@
-.row
-  .col-md-8
-    h3 =@feedback.name || ''
+= render 'survey_header'
 .row
   .col-md-8
     = form_for [:feedback, @response] do |f|

@@ -1,11 +1,10 @@
 class ResponsesController < ApplicationController
   before_action :authenticate_admin_user!, only: [:index, :show]
   before_action :set_response, only: [:show, :edit, :update, :destroy]
-  before_action :set_feedback, only: [:new, :create, :index]
+  before_action :set_feedback, only: [:new, :create]
 
   def index
-    @feedback = Feedback.friendly.find params[:feedback_id]
-    @responses = @feedback.responses
+    @feedback = Feedback.includes(responses: [:respondent, :answers => :question]).friendly.find(params[:feedback_id])
     @responses = ArrayPagination.paginate(@feedback.responses, {page: params[:page], per: 5})
   end
 
